@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="query_suggestions">
+        <item>Kanye West</item>
+        <item>Taylor Swift</item>
+        <item>Kory</item>
+        <item>Mary</item>
+    </string-array>
+</resources>

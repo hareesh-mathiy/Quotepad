@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/my_quotes"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="My Quotes" />
+        <item
+            android:id="@+id/popular_quotes"
+            android:icon="@drawable/ic_thumb_up_black_24dp"
+            android:title="Popular Quotes" />
+        <item
+            android:id="@+id/explore"
+            android:icon="@drawable/ic_language_black_24dp"
+            android:title="Explore" />
+        <item
+            android:id="@+id/app_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="App Settings" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/account_details"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="Account Details" />
+            <item
+                android:id="@+id/log_out"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="Log Out" />
+        </menu>
+    </item>
+</menu>

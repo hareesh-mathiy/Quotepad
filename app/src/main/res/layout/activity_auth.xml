@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/ThemeOverlay.FirebaseIcon"
+            android:id="@+id/google_icon"
+            android:contentDescription="@string/desc_firebase_lockup"
+            android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:background="@color/grey_300"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sign_in_with_google"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:minWidth="250dp" />
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sign_in_with_email"
+                android:layout_below="@+id/sign_in_button"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:minWidth="250dp" />
+
+            <Button
+                android:id="@+id/email_create_account_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/create_account"
+                android:layout_below="@+id/email_sign_in_button"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:minWidth="250dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sign_out_and_disconnect"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/title_bottom_margin"
+                android:textSize="20sp"
+                android:paddingBottom="20dp"
+                android:text="@string/google_title_text"
+                android:theme="@style/ThemeOverlay.MyTitleText" />
+
+            <Button
+                android:id="@+id/sign_out_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/title_text"
+                android:text="@string/sign_out"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="250dp" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/sign_out_button"
+                android:text="@string/cancel"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:minWidth="250dp"  />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email_register"
+            android:padding="20dp"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:id="@+id/field_email_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="500dp"
+                android:textColor="@color/theme_primary_text"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/field_name_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/field_email_register"
+                android:hint="@string/hint_name"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="500dp"
+                android:textColor="@color/theme_primary_text"
+                android:inputType="textCapWords" />
+
+            <EditText
+                android:id="@+id/field_password_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/field_name_register"
+                android:hint="@string/hint_password"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="500dp"
+                android:textColor="@color/theme_primary_text"
+                android:inputType="textPassword" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/email_submit_and_cancel_register"
+                android:layout_centerInParent="true"
+                android:paddingTop="20dp"
+                android:layout_below="@+id/field_password_register">
+
+                <Button
+                    android:id="@+id/submit_button_email_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:layout_toEndOf="@+id/cancel_button_email_register"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"
+                    android:padding="20dp"
+                    android:layout_margin="5dp"
+                    android:minWidth="150dp" />
+
+                <Button
+                    android:id="@+id/cancel_button_email_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:padding="20dp"
+                    android:layout_margin="5dp"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"
+                    android:minWidth="150dp"  />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email_editText"
+            android:padding="20dp"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:id="@+id/field_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="500dp"
+                android:textColor="@color/theme_primary_text"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/field_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/field_email"
+                android:hint="@string/hint_password"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:minWidth="500dp"
+                android:textColor="@color/theme_primary_text"
+                android:inputType="textPassword" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/email_submit_and_cancel"
+                android:layout_centerInParent="true"
+                android:paddingTop="20dp"
+                android:layout_below="@+id/field_password">
+
+                <Button
+                    android:id="@+id/submit_button_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    android:layout_toEndOf="@+id/cancel_button_email"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"
+                    android:padding="20dp"
+                    android:layout_margin="5dp"
+                    android:minWidth="150dp" />
+
+                <Button
+                    android:id="@+id/cancel_button_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:padding="20dp"
+                    android:layout_margin="5dp"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"
+                    android:minWidth="150dp"  />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

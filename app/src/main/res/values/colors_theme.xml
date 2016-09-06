@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_primary">#795548</color>
+    <color name="theme_primary_dark">#5D4037</color>
+    <color name="theme_primary_light">#D7CCC8</color>
+    <color name="theme_accent">#9E9E9E</color>
+    <color name="theme_background_1">#BDBDBD</color>
+    <color name="theme_background_2">#FFFFFF</color>
+    <color name="theme_background_inverse">#212121</color>
+    <color name="theme_primary_trans">#99212121</color>
+    <color name="theme_primary_text">#212121</color>
+    <color name="theme_secondary_text">#757575</color>
+    <color name="theme_primary_text_inverted">#FFFFFF</color>
+    <color name="theme_secondary_text_inverted">#8affffff</color>
+    <color name="theme_fabicons_1">#795548</color>
+    <color name="theme_fabicons_2">#607D8B</color>
+    <color name="theme_divider">#BDBDBD</color>
+</resources>

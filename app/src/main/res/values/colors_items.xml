@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#636363</color>
+    <color name="fab">#00bbda</color>
+    <color name="white">#ffffff</color>
+    <color name="fab_delete">#C40233</color>
+
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="colorAccent">#FFA000</color>
+</resources>

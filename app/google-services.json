@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "459345632086",
+    "firebase_url": "https://quotepad-da764.firebaseio.com",
+    "project_id": "quotepad-da764",
+    "storage_bucket": "quotepad-da764.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459345632086:android:229ff0914cd0ac01",
+        "android_client_info": {
+          "package_name": "com.hareesh.quotepad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459345632086-p11vmp71ssm9udm7o7e86c48u0b1g6qu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hareesh.quotepad",
+            "certificate_hash": "00C7029496426E84BDAF36805C38B469C574BE69"
+          }
+        },
+        {
+          "client_id": "459345632086-ab05hdipte7v70nfm3idht67uiv3jrha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxspskZiSh4yg9JeVA1r4TCn2kmfazmeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459345632086-ab05hdipte7v70nfm3idht67uiv3jrha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
