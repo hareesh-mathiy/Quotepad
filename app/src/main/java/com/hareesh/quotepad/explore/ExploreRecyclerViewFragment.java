@@ -24,14 +24,14 @@ import java.util.List;
 /**
  * Created by florentchampigny on 24/04/15.
  */
-public class RecyclerViewFragment extends Fragment {
+public class ExploreRecyclerViewFragment extends Fragment {
 
     static final boolean GRID_LAYOUT = false;
     private static RecyclerView mRecyclerView;
     private static RecyclerView.Adapter mAdapter;
     private static List<Object> mContentItems = new ArrayList<>();
-    public static RecyclerViewFragment newInstance() {
-        return new RecyclerViewFragment();
+    public static ExploreRecyclerViewFragment newInstance() {
+        return new ExploreRecyclerViewFragment();
     }
     public static TextView quoteText;
 
@@ -58,7 +58,7 @@ public class RecyclerViewFragment extends Fragment {
         //Use this now
         mRecyclerView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
 
-        mAdapter = new TestRecyclerViewAdapter(mContentItems);
+        mAdapter = new ExploreRecyclerViewAdapter(mContentItems, getContext(), mRecyclerView);
 
     }
 

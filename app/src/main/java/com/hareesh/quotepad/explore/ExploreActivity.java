@@ -23,9 +23,10 @@ import android.widget.Toast;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
-import com.hareesh.quotepad.R;
 import com.hareesh.quotepad.MainActivity;
+import com.hareesh.quotepad.R;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
+
 import org.apache.commons.lang3.text.WordUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,8 +39,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,8 +53,7 @@ public class ExploreActivity extends AppCompatActivity {
     String imageJsonStr;
     String input2;
     String imageURL;
-    String author;
-    private static final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
+    public static String author;
     String searchText;
     boolean quotesExist = false;
     TextView logo;
@@ -82,9 +80,9 @@ public class ExploreActivity extends AppCompatActivity {
                     case 0:
                         return ScrollFragment.newInstance();
                     case 1:
-                        return RecyclerViewFragment.newInstance();
+                        return ExploreRecyclerViewFragment.newInstance();
                     default:
-                        return RecyclerViewFragment.newInstance();
+                        return ExploreRecyclerViewFragment.newInstance();
                 }
             }
 
@@ -225,7 +223,7 @@ public class ExploreActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            RecyclerViewFragment.fillCards(resultStrs);
+                            ExploreRecyclerViewFragment.fillCards(resultStrs);
                         }
                     });
 
@@ -288,7 +286,7 @@ public class ExploreActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                RecyclerViewFragment.fillCards(resultStrs);
+                                ExploreRecyclerViewFragment.fillCards(resultStrs);
                             }
                         });
 
@@ -562,5 +560,9 @@ public class ExploreActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public static String getAuthor(){
+        return author;
     }
 }

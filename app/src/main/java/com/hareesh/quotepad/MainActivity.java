@@ -18,11 +18,13 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hareesh.quotepad.explore.ExploreActivity;
+import com.hareesh.quotepad.popular.PopularActivity;
 
 import java.util.HashMap;
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     public static boolean logout;
     FirebaseDatabase database;
     DatabaseReference myRef;
+    Firebase detailsFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Firebase.setAndroidContext(this);
+
         welcomeText = (TextView) findViewById(R.id.welcomeText);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -68,11 +73,11 @@ public class MainActivity extends AppCompatActivity
             welcomeText.setText(getString(R.string.welcomeText, user.getDisplayName()));
             database = FirebaseDatabase.getInstance();
             myRef = database.getReference(user.getUid());
-            HashMap<String, Object> result = new HashMap<>();
-            result.put("Display Name", user.getDisplayName());
-            result.put("Email", user.getEmail());
-            myRef.setValue(result);
-
+            detailsFirebase = new Firebase(myRef.getRoot().toString().concat("/").concat("Users").concat("/").concat(user.getUid()).concat("/").concat("Info"));
+            HashMap<String, Object> userDetails = new HashMap<>();
+            userDetails.put("Display Name", user.getDisplayName());
+            userDetails.put("Email", user.getEmail());
+            detailsFirebase.setValue(userDetails);
         } else {
             Intent intent = new Intent(MainActivity.this, AuthActivity.class);
             startActivity(intent);
@@ -145,7 +150,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.my_quotes) {
 
         } else if (id == R.id.popular_quotes) {
-
+            Intent intent = new Intent(MainActivity.this, PopularActivity.class);
+            startActivity(intent);
         } else if (id == R.id.explore) {
             Intent intent = new Intent(MainActivity.this, ExploreActivity.class);
             startActivity(intent);

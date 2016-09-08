@@ -78,4 +78,5 @@
     <string name="sign_up">Sign Up</string>
     <string name="account_details">Account Details</string>
     <string name="current_user">Current User: %s</string>
+    <string name="popular">Popular Quotes</string>
 </resources>
