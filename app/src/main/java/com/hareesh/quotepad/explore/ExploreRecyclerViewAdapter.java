@@ -5,13 +5,15 @@ package com.hareesh.quotepad.explore;
  */
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -22,7 +24,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hareesh.quotepad.Quote;
 import com.hareesh.quotepad.R;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +45,8 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     Firebase likeFirebase, globalLikeFirebase;
     FirebaseUser user;
     Quote q1, q2, q3, qtemp;
-    boolean quoteLiked;
+    public static boolean quoteLiked;
+    Toast toast;
 
     public ExploreRecyclerViewAdapter(List<Object> contents, Context context, RecyclerView mRecyclerView) {
         this.contents = contents;
@@ -69,7 +71,7 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = null;
         view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_card_small, parent, false);
+                .inflate(R.layout.list_item_card_small_explore, parent, false);
 
         holder = new RecyclerView.ViewHolder(view) {
         };
@@ -87,6 +89,7 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         ItemClickSupport.addTo(mRecyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+
             }
         });
 
@@ -94,13 +97,13 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         ItemClickSupport.addTo(mRecyclerView).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+
                 pos = position;
                 qtemp = new Quote(ExploreActivity.resultStrs.get(position), ExploreActivity.getAuthor(), 0);
 
                 likeFirebase.runTransaction(new Transaction.Handler() {
                     @Override
                     public Transaction.Result doTransaction(com.firebase.client.MutableData mutableData) {
-
                         for (com.firebase.client.MutableData snap : mutableData.getChildren()) {
                             Quote qsnap = new Quote(snap.child("quote").getValue().toString(),
                                     snap.child("author").getValue().toString(), 0);
@@ -120,9 +123,12 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
                     @Override
                     public void onComplete(FirebaseError firebaseError, boolean b, com.firebase.client.DataSnapshot dataSnapshot) {
-
+                        if(quoteLiked){
+                            makeToast();
+                        }
                     }
                 });
+
 
                 globalLikeFirebase.runTransaction(new Transaction.Handler() {
                     @Override
@@ -139,6 +145,7 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                                     scoreSnap.setValue(qsnap.getScore() - 1);
                                     if(qsnap.getScore()-1 == 0){
                                         globalLikeFirebase.child(snap.getKey()).setValue(null);
+
                                     }
                                 }
                                 return null;
@@ -157,9 +164,24 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
                     }
                 });
-
                 return true;
             }
         });
+    }
+
+    public void makeToast(){
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+        View view = inflater.inflate(R.layout.toast_like, (ViewGroup) mRecyclerView.findViewById(R.id.relativeLayout1));
+        toast = new Toast(context);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setView(view);
+        toast.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 750);
     }
 }

@@ -79,4 +79,5 @@
     <string name="account_details">Account Details</string>
     <string name="current_user">Current User: %s</string>
     <string name="popular">Popular Quotes</string>
+    <string name="my_quotes">My Quotes</string>
 </resources>

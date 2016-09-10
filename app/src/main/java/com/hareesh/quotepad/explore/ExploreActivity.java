@@ -57,6 +57,7 @@ public class ExploreActivity extends AppCompatActivity {
     String searchText;
     boolean quotesExist = false;
     TextView logo;
+    public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,8 @@ public class ExploreActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        context = this;
 
         resultStrs = new ArrayList<>();
 

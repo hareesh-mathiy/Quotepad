@@ -306,9 +306,10 @@ public class AuthActivity extends AppCompatActivity implements
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
-                Log.d(TAG, "onAuthStateChanged:failure");
+                Log.d(TAG, "onAuthStateChanged:failure " + result.getStatus().getStatusCode());
                 // Google Sign In failed, update UI appropriately
                 // [START_EXCLUDE]
+
                 updateUI(null);
                 // [END_EXCLUDE]
             }

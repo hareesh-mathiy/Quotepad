@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hareesh.quotepad.explore.ExploreActivity;
+import com.hareesh.quotepad.myquotes.MyQuotesActivity;
 import com.hareesh.quotepad.popular.PopularActivity;
 
 import java.util.HashMap;
@@ -147,8 +148,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.my_quotes) {
-
+        if (id == R.id.my_quotepad) {
+            Intent intent = new Intent(MainActivity.this, MyQuotesActivity.class);
+            startActivity(intent);
         } else if (id == R.id.popular_quotes) {
             Intent intent = new Intent(MainActivity.this, PopularActivity.class);
             startActivity(intent);

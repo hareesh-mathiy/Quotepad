@@ -3,6 +3,7 @@ package com.hareesh.quotepad.explore;
 /**
  * Created by Hareesh on 8/31/2016.
  */
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,7 @@ public class ExploreRecyclerViewFragment extends Fragment {
         return new ExploreRecyclerViewFragment();
     }
     public static TextView quoteText;
+    public static Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class ExploreRecyclerViewFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager;
         quoteText = (TextView) getView().findViewById(R.id.quoteText);
+        context = this.getContext();
 
         if (GRID_LAYOUT) {
             layoutManager = new GridLayoutManager(getActivity(), 2);
