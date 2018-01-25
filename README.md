@@ -13,7 +13,7 @@ I made this application as an introduction to Android development.<br><br> This 
 <li>Clean scrollview for displaying quotes.</li>
 </ul>
 
-<br><hr><br>
+<br><hr>
 # Screenshots:
 <br>
 <p float="left">
