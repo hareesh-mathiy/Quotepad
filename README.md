@@ -7,7 +7,7 @@ I made this application as an introduction to Android development.<br><br> This 
 <li>Firebase database implementation for saving liked quotes.</li>
 <li>Google authentication, email authentication and account creation/deletion.</li>
 <li>Search functionality to querying Wikiquotes for quotes and image data by author name.</li>
-<li>Parsing retrieved JSON data to display the necessary information.</li>
+<li>Parsing retrieved JSON data to strip unneccessary tags/data.</li>
 <li>Screen for viewing your liked quotes and your created quotes.</li>
 <li>Screen for viewing top liked posts of the day and all time by all users.</li>
 <li>Clean scrollview for displaying quotes.</li>
