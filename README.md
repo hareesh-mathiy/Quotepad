@@ -17,14 +17,14 @@ I made this application as an introduction to Android development.<br><br> This 
 # Screenshots:
 <br>
 <p float="left">
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015612.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015630.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015653.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015715.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015758.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015804.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015820.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015858.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015917.png" width="40%"/>
-<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015942.png" width="40%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015612.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015630.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015653.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015715.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015758.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015804.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015820.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015858.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015917.png" width="30%"/>
+<img src="https://github.com/hareesh-mathiy/Quotepad/blob/master/Screenshots/Screenshot_20180125-015942.png" width="30%"/>
 </p>
